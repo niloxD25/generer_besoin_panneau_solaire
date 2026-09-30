@@ -1,0 +1,40 @@
+@import url("./styles/variables.css");
+
+.footer-container {
+    padding: 20px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 10px 20px;
+    margin-top: auto;
+}
+
+.footer-links, .footer-socials {
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    color: var(--hover-color);
+}
+
+.social-icon {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    text-decoration: underline;
+}

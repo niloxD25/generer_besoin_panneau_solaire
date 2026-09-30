@@ -1,0 +1,44 @@
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+    <title>Home Page</title>
+</head>
+<body>
+    <!-- Conteneur pour le HeaderPanel -->
+    <div wicket:id="headerPanel"></div>
+
+    <!-- Conteneur pour le SideMenuPanel -->
+    <div wicket:id="sideMenuPanel"></div>
+
+    <div class="wrap">
+        <!-- Contenu principal de la page -->
+        <div class="content">
+            <h1>Appareils utilisés</h1>
+            <form wicket:id="form">
+                <div wicket:id="utilisationList">
+                    <label>Matériel:</label>
+                    <input required type="text" wicket:id="materiel" />
+        
+                    <label>Puissance:</label>
+                    <input required type="text" wicket:id="puissance" />
+        
+                    <label>Heure de début:</label>
+                    <input required type="text" wicket:id="heureDebut" />
+        
+                    <label>Heure de fin:</label>
+                    <input required type="text" wicket:id="heureFin" />
+                    <hr/>
+                </div>
+        
+                <!-- Boutons Ajouter et Supprimer -->
+                <button type="button" wicket:id="addButton">+</button>
+                <button type="button" wicket:id="removeButton">-</button>
+        
+                <!-- Bouton de soumission -->
+                <button type="submit" wicket:id="submitButton">Soumettre</button>
+            </form>
+        </div>
+
+        <div wicket:id="footer"></div>
+    </div>
+</body>
+</html>

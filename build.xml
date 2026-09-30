@@ -1,0 +1,77 @@
+<project name="solar" default="deploy" basedir=".">
+
+    <!-- Définition des propriétés -->
+    <property name="src.java.dir" value="src/main/java"/>
+    <property name="src.resources.dir" value="src/main/resources"/>
+    <property name="src.webapp.dir" value="src/main/webapp"/>
+    <property name="build.dir" value="build"/>
+    <property name="lib.dir" value="lib"/>
+    <property name="dist.dir" value="dist"/>
+    <property name="war.file" value="${dist.dir}/solar.war"/>
+    <property name="wildfly.home" value="D:/S5/mrTahina/wildfly-26.1.2.Final"/>
+    <property name="wildfly.deploy.dir" value="C:/Program Files/Apache Software Foundation/Tomcat 8.5/webapps"/>
+
+    <!-- Nettoyage des anciens fichiers -->
+    <target name="clean">
+        <echo message="Initialisation clean."/>
+        <delete dir="${build.dir}"/>
+        <delete dir="${dist.dir}"/>
+    </target>
+
+    <!-- Compilation des fichiers Java -->
+    <target name="compile" depends="clean">
+        <echo message="Compilation et copie des fichiers."/>
+        <mkdir dir="${build.dir}"/>
+        <mkdir dir="${build.dir}/WEB-INF/classes"/>
+        <javac srcdir="${src.java.dir}" destdir="${build.dir}/WEB-INF/classes" includeantruntime="false" classpathref="classpath"/>
+    </target>
+
+    <!-- Définition du classpath avec les bibliothèques Wicket -->
+    <path id="classpath">
+        <fileset dir="${lib.dir}">
+            <include name="**/*.jar"/>
+        </fileset>
+    </path>
+
+    <!-- Copie des ressources (pages HTML, etc.) -->
+    <target name="copy-resources" depends="compile">
+        <echo message="Copie des ressources (HTML, CSS, etc.) dans le répertoire de build."/>
+        <copy todir="${build.dir}/WEB-INF/classes">
+            <fileset dir="${src.resources.dir}">
+                <include name="**/*.*"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <!-- Copie de webapp -->
+    <target name="copy-webapp" depends="copy-resources">
+        <echo message="Copie des ressources webapp dans le répertoire de build."/>
+        <copy todir="${build.dir}">
+            <fileset dir="${src.webapp.dir}">
+                <include name="**/*"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <!-- Création du fichier WAR -->
+    <target name="war" depends="copy-webapp">
+        <echo message="Creation du fichier war."/>
+        <mkdir dir="${dist.dir}"/>
+        <war destfile="${war.file}" webxml="WEB-INF/web.xml">
+            <!-- Inclure le contenu compilé et les ressources -->
+            <fileset dir="${build.dir}">
+                <include name="**/*"/>
+            </fileset>
+            <!-- Inclure les bibliothèques -->
+            <lib dir="${lib.dir}"/>
+        </war>
+    </target>
+
+    <!-- Déploiement sur WildFly -->
+    <target name="deploy" depends="war">
+        <echo message="Déploiement du fichier war."/>
+        <copy file="${war.file}" todir="${wildfly.deploy.dir}"/>
+        <echo message="Déploiement sur WildFly réussi dans ${wildfly.deploy.dir}."/>
+    </target>
+
+</project>

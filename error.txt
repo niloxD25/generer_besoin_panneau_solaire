@@ -1,0 +1,2 @@
+Last cause: form was not specified in the constructor and cannot be found in the hierarchy of the component this behavior is attached to: Component=[AjaxButton [Component id = addButton]]
+WicketMessage: Exception in rendering component: [HtmlHeaderContainer [Component id = _header_]]

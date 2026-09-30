@@ -1,0 +1,39 @@
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+    <title>Contact Page</title>
+</head>
+<body>
+    <!-- Conteneur pour le HeaderPanel -->
+    <div wicket:id="headerPanel"></div>
+
+    <!-- Conteneur pour le SideMenuPanel -->
+    <div wicket:id="sideMenuPanel"></div>
+    
+    <div class="wrap">
+        <div class="contact-form-container">
+            <h2>Contactez-nous</h2>
+            
+            <form wicket:id="contactForm">
+                <div class="form-field">
+                    <label for="nameInput">Nom</label>
+                    <div wicket:id="nameInput"></div>
+                </div>
+
+                <div class="form-field">
+                    <label for="emailInput">Email</label>
+                    <div wicket:id="emailInput"></div>
+                </div>
+
+                <div class="form-field">
+                    <label for="messageInput">Message</label>
+                    <div wicket:id="messageInput"></div>
+                </div>
+
+                <button type="submit" wicket:id="submitButton">Envoyer</button>
+            </form>
+        </div>
+
+        <div wicket:id="footer"></div>
+    </div>
+</body>
+</html>

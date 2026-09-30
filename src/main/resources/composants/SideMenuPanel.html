@@ -1,0 +1,27 @@
+<!-- src/main/resources/com/example/components/SideMenuPanel.html -->
+<wicket:panel>
+    <div class="contener">
+        <!-- Icône SVG pour afficher/masquer le menu latéral -->
+        <div class="menu-icon" wicket:id="menuIcon">
+            <a wicket:id="toggleMenu" class="toggle-button">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Exemple d'icône de menu hamburger -->
+                    <rect y="11" width="24" height="2" />
+                    <rect y="18" width="18" height="2" />
+                </svg>
+            </a>
+        </div>
+
+        <!-- Conteneur du menu latéral -->
+        <div class="side-menu" wicket:id="menuContainer">
+            <div class="menu-header">
+                <h2>Menu</h2>
+            </div>
+            <div class="menu-items">
+                <a wicket:id="menuItems">
+                    <span wicket:id="itemLabel"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</wicket:panel>

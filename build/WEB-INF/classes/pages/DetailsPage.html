@@ -1,0 +1,51 @@
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+    <title>Détails Devis</title>
+</head>
+<body>
+    <!-- Conteneur pour le HeaderPanel -->
+    <div wicket:id="headerPanel"></div>
+
+    <!-- Conteneur pour le SideMenuPanel -->
+    <div wicket:id="sideMenuPanel"></div>
+
+    <div class="wrap">
+        <div class="content">
+            <h1>Détails du Devis</h1>
+
+            <!-- Affichage de la liste des matériaux -->
+            <div wicket:id="listeMateriauxTable"></div>
+            
+            <h3>Consommation maximun pendant la journée: <span wicket:id="consoJournee"></span> W</h3>
+            
+            <ul>
+                <li>Besoin en panneau solaire: <span wicket:id="puissancePanneau"></span> W</li>
+                <li>Prix panneau solaire: <span wicket:id="prixPanneau"></span> Ar ( <span wicket:id="prixParW"></span> Ar / w )</li>
+            </ul>
+
+            <h3>Total reste non utilisé: <span wicket:id="reste"></span> W  </h3>
+            <h3>Total prix reste non utilisé: <span wicket:id="prixRest"></span> Ar  </h3>
+            
+            <h3>Consommation pendant la soirée: <span wicket:id="consoSoiree"></span> W</h3>
+
+            <div wicket:id="listeBatterie"></div>
+
+            <h3>Prix Total: </h3>
+            <ul>
+                <li><span wicket:id="total1"></span></li>
+                <li><span wicket:id="total2"></span></li>
+                <li><span wicket:id="total3"></span></li>
+            </ul>
+
+            <div wicket:id="confirmerButton">
+                <span wicket:id="confirmerLabel"></span>
+            </div>
+
+
+        </div>
+
+        <div wicket:id="footer"></div>
+    </div>
+
+</body>
+</html>

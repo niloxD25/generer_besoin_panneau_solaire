@@ -1,0 +1,37 @@
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+    <title>Confirmation de Devis</title>
+</head>
+<body>
+    <!-- Conteneur pour le HeaderPanel -->
+    <div wicket:id="headerPanel"></div>
+
+    <!-- Conteneur pour le SideMenuPanel -->
+    <div wicket:id="sideMenuPanel"></div>
+
+    <div class="wrap">
+        <div class="content">
+            <h1>Confirmation de Devis</h1>
+
+            <!-- Affichage de l'ID du devis -->
+            <p wicket:id="devisId"></p>
+
+            <!-- Formulaire pour saisir le nom et l'adresse -->
+            <form wicket:id="confirmationForm">
+                <label for="nom">Nom:</label>
+                <input wicket:id="nom" type="text" required />
+
+                <label for="adresse">Adresse:</label>
+                <input wicket:id="adresse" type="text" required />
+
+                <!-- Bouton pour enregistrer -->
+                <button wicket:id="enregistrerButton">Enregistrer</button>
+            </form>
+
+        </div>
+
+        <div wicket:id="footer"></div>
+    </div>
+
+</body>
+</html>

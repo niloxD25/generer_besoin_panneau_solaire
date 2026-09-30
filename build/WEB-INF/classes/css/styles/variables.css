@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'montserrat';
+    src: url('../fonts/Montserrat-VariableFont_wght.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --font-family: 'montserrat', sans-serif;
+}
+
+/* Couleurs principales */
+:root {
+    --primary-color: #111111;     
+    --secondary-color: #555555;   
+    --hover-color: #712e9e;       
+    --background-color: #f5f5f5;  
+    --text-color: #333333;        
+}
+
+/* Autres couleurs et styles spécifiques */
+:root {
+    --header-background: #ffffff; 
+    --menu-background: #333333;   
+    --menu-text-color: #e8cff7;   
+    --menu-hover-color: #444444;  
+}
